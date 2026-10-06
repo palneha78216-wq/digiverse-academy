@@ -1,0 +1,160 @@
+/* All styles are in style.css */
+/* Global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  width: 100%;
+  min-width: 320px;
+  overflow-x: clip;
+  font-family: Arial, sans-serif;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* General sections */
+section {
+  width: 100%;
+  position: relative;
+}
+
+/* Common content container */
+.container {
+  width: min(100% - 40px, 1200px);
+  margin-inline: auto;
+}
+
+/* Responsive text */
+h1, h2, h3, p {
+  overflow-wrap: break-word;
+}
+
+/* Buttons */
+button, a {
+  cursor: pointer;
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .container {
+    width: min(100% - 32px, 900px);
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .container {
+    width: calc(100% - 30px);
+  }
+
+  h1 {
+    font-size: clamp(28px, 8vw, 42px);
+  }
+
+  h2 {
+    font-size: clamp(24px, 6vw, 34px);
+  }
+}
+
+
+
+/* ================================
+   GLOBAL LAYOUT STABILITY
+================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Prevent images from expanding the layout */
+
+img,
+video,
+iframe {
+  max-width: 100%;
+}
+
+img {
+  display: block;
+}
+
+/* Prevent long text from pushing the page wider */
+
+h1,
+h2,
+h3,
+h4,
+p,
+a {
+  overflow-wrap: break-word;
+}
+
+/* Consistent responsive containers */
+
+.page-container {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* Avoid anchor targets hiding behind sticky header */
+
+section[id] {
+  scroll-margin-top: 100px;
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Small screen spacing */
+
+@media (max-width: 576px) {
+  .page-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+
